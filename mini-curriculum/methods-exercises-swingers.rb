@@ -33,6 +33,8 @@ def swingers(couples)
   mixups
 end
 
+# Method to bang on swingers. Runs swingers on the same couples array
+# number times
 def swingers_test(number, couples)
   return unless number > 0
   statistics = initialize_statistics(couples)
@@ -45,6 +47,7 @@ def swingers_test(number, couples)
   print_statistics(statistics, couples)
 end
 
+# Method to make an empty table wherein to store the statistics
 def initialize_statistics(couples)
   statistics = []
 
@@ -61,6 +64,7 @@ def initialize_statistics(couples)
   statistics
 end
 
+# Method to update statistics table after each run of swingers
 def update_statistics(statistics, mixups)
   #print statistics
 
@@ -74,7 +78,7 @@ def update_statistics(statistics, mixups)
   statistics
 end
 
-
+# Method to nicely print the statistics
 def print_statistics(statistics, couples)
 
   # Print Header
@@ -92,6 +96,7 @@ def print_statistics(statistics, couples)
   end
 end
 
+# Test data1
 couples1 = [
   ["a", "1"],
   ["b", "2"],
@@ -101,6 +106,7 @@ couples1 = [
   ["f", "6"],
 ]
 
+# Test data2
 couples2 = [
   ["Clyde", "Bonnie"],
   ["Paris", "Helen"],
