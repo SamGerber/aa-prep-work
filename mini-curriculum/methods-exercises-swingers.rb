@@ -1,3 +1,4 @@
+!/usr/bin/env ruby
 # The program explores methods through
 # some examples.
 #
@@ -58,7 +59,7 @@ def initialize_statistics(couples)
       statistic << [couples[jdx][1], 0]
     end
 
-    statistics << statistic.to_ary
+    statistics << statistic
   end
 
   statistics
