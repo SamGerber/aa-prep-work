@@ -88,7 +88,7 @@ end
 def make_game
   disc_count = 0
   
-  printf("\rHow many discs would you like to play with?\r")
+  puts("\nHow many discs would you like to play with?\r")
   loop do
     printf( "Enter a number from 3 (easy) to 10 (hard): ")
     disc_count = gets.chomp.to_i
@@ -121,13 +121,17 @@ end
 def print_board(pegs, turn_count)
   #system "clear" || system "cls"
   
-  print "\rTurn: #{turn_count}"
-  printf("\r%-10s %-24s %-24s Peg 3\r\r", "", "Peg 1", "Peg 2")
+  puts "\nTurn: #{turn_count}"
+  printf("\r%-10s %-24s %-24s Peg 3\n\n", "", "Peg 1", "Peg 2")
   
-  12.times do |height|
-    printf("\r ")
-    pegs.each do |peg|
-      printf("%s", peg[height] ? $sprites[peg[height]] : $sprites[0])
+  13.times do |height|
+    puts("\r ")
+    pegs.each do |peg, stack|
+      if stack[11 - height] == nil
+        printf("%s", $sprites[0])
+      else
+        printf("%s", $sprites[stack[11 - height]])
+      end
     end
   end
   
