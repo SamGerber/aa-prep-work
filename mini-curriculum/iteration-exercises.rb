@@ -80,3 +80,26 @@ def bubble_sort(numbers)
 end
 
 print "\n #{bubble_sort [9, 8, 7, 6, 5, 4, 3, 2, 1]}"
+
+
+# ########################################################
+# Returns an array containing every possible substring
+# of string. The array is  sorted like this:
+# substrings("cat") => ["c", "ca", "cat", "a", "at", "t"]
+
+def substrings(string)
+  return string if string.length < 2
+  result = []
+
+  (string.length).times do |first_letter|
+
+    (first_letter + 1 .. string.length).each do |substring_length|
+        result << string.slice(first_letter, substring_length)
+    end
+
+  end
+
+  return result
+end
+
+print "\n #{substrings("cat")}"
