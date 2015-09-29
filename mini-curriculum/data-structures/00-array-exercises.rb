@@ -72,16 +72,16 @@ def hanoi
 end
 
 def print_instructions
-  printf("\n\t\t\t\t\tTowers of Hanoi\r\r
+  printf("\n\t\t\t\tTowers of Hanoi\r\r
   
-          \tThe objective of the puzzle is to move the entire stack to another\r
-          \tpeg, obeying the following simple rules:\r\r
+          The objective of the puzzle is to move the entire stack to another\r
+          peg, obeying the following simple rules:\r\r
           
-          \t\t1.) Only one disk can be moved at a time.\r
-          \t\t2.) Each move consists of taking the upper disk from one of the\r 
-          \t\t\tstacks and placing it on top of another stack i.e. a disk can\r
-          \t\t\tonly be moved if it is the uppermost disk on a stack.\r
-          \t\t3.) No disk may be placed on top of a smaller disk.\r
+          \t1.) Only one disk can be moved at a time.\r
+          \t2.) Each move consists of taking the upper disk from one of the\r 
+          \t\tstacks and placing it on top of another stack i.e. a disk can\r
+          \t\tonly be moved if it is the uppermost disk on a stack.\r
+          \t3.) No disk may be placed on top of a smaller disk.\r
         ")
 end
 
