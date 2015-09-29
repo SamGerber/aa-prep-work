@@ -72,17 +72,14 @@ def hanoi
 end
 
 def print_instructions
-  printf("\n\t\t\t\tTowers of Hanoi\r\r
-  
-          The objective of the puzzle is to move the entire stack to another\r
-          peg, obeying the following simple rules:\r\r
-          
-          \t1.) Only one disk can be moved at a time.\r
-          \t2.) Each move consists of taking the upper disk from one of the\r 
-          \t\tstacks and placing it on top of another stack i.e. a disk can\r
-          \t\tonly be moved if it is the uppermost disk on a stack.\r
-          \t3.) No disk may be placed on top of a smaller disk.\r
-        ")
+  printf("\n\t\t\t\tTowers of Hanoi\r")
+  printf("The objective of the puzzle is to move the entire stack to another\r")
+  printf("peg, obeying the following simple rules:\r\r")
+  printf("\t1.) Only one disk can be moved at a time.\r")
+  printf("\t2.) Each move consists of taking the upper disk from one of the\r")
+  printf("\t\tstacks and placing it on top of another stack i.e. a disk can\r")
+  printf("\t\tonly be moved if it is the uppermost disk on a stack.\r")
+  printf("\t3.) No disk may be placed on top of a smaller disk.\r")
 end
 
 def make_game
