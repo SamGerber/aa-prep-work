@@ -110,12 +110,12 @@ def play_hanoi(pegs)
 
   loop do
     print_board(pegs, move_count)
-    pegs = get_move(pegs)
-    move_count += 1
     if pegs["peg1"].empty? && (pegs["peg2"].empty? || pegs["peg3"].empty?)
       record = 2 ** (pegs["peg2"].count + pegs["peg3"].count) -1
       hanoi_win(move_count, record)
     end
+    pegs = get_move(pegs)
+    move_count += 1
   end
 
 end
@@ -151,7 +151,7 @@ def get_move(pegs)
   loop do
     puts "\rType the number of a peg from which to take the top disk :"
     from_peg= "peg" + gets.chomp
-    break if pegs[from_peg][0]
+    break if pegs[from_peg][0] 
     puts "\rInvalid entry."
   end
   
@@ -160,7 +160,7 @@ def get_move(pegs)
   loop do
     puts "\rType the number of the peg onto which to place the #{disk} disk :"
     to_peg = "peg" + gets.chomp
-    break if pegs[to_peg].last == nil || pegs[to_peg].last > disk
+    break if pegs[to_peg][0] && (pegs[to_peg].last == nil || pegs[to_peg].last > disk )
     puts "\rInvalid entry."
   end
   
@@ -173,5 +173,41 @@ def hanoi_win (moves, record)
   exit
 end
 
+#hanoi
+
+# ##########################################
+# This function takes an array containing 
+# i arrays of j elements and returns an equivalent
+# array of j arrays of i elements
+def my_transpose(original)
+  transpose = []
   
-hanoi
+  original[0].count.times do |col_num|
+    column = []
+    
+    original.count.times do |row_num|
+      column << original[row_num][col_num]
+    end
+    
+    transpose << column
+  
+  end
+  transpose
+end
+
+# rows = [
+#     [0, 1, 2, 7],
+#     [3, 4, 5, 8],
+#     [6, 7, 8, 9]
+#   ]
+
+# puts rows[0].to_s
+# puts rows[1].to_s
+# puts rows[2].to_s
+
+# columns = my_transpose(rows)
+
+# puts columns[0].to_s
+# puts columns[1].to_s
+# puts columns[2].to_s
+# puts columns[3].to_s
