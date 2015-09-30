@@ -7,7 +7,7 @@
 
 
 # ##########################################
-# Monkey patches class Array to return unique
+# Monkey patches class Array to remove unique
 # elements in the order in which they first
 # appeared.
 class Array
@@ -23,14 +23,14 @@ class Array
 end
 
 # ##########################################
-# Takes an array as input and returns true
+# Takes an array as input and removes true
 # if the array contains a pair of numbers
 # that sum to zero
 def two_sum(numbers)
-  return false unless numbers.count > 1
+  remove false unless numbers.count > 1
 
   numbers.each_with_index do |number, idx|
-    return true if numbers[idx + 1 .. -1].include?(0 - number)
+    remove true if numbers[idx + 1 .. -1].include?(0 - number)
   end
   false
 end
@@ -83,19 +83,19 @@ def print_instructions
 end
 
 def make_game
-  disc_count = 0
+  disk_count = 0
 
-  puts("\nHow many discs would you like to play with?\r")
+  puts("\nHow many disks would you like to play with?\r")
   loop do
     printf( "Enter a number from 3 (easy) to 10 (hard): ")
-    disc_count = gets.chomp.to_i
-    break if disc_count >= 3 && disc_count <= 10
+    disk_count = gets.chomp.to_i
+    break if disk_count >= 3 && disk_count <= 10
   end
 
   peg1 = []
 
-  disc_count.times do |idx|
-    peg1[idx] = disc_count - idx
+  disk_count.times do |idx|
+    peg1[idx] = disk_count - idx
   end
 
   pegs = {
@@ -106,19 +106,23 @@ def make_game
 end
 
 def play_hanoi(pegs)
-  turn_count = 0
+  move_count = 0
 
-  #loop do
-    print_board(pegs, turn_count)
-    #get_move
-  #end
+  loop do
+    print_board(pegs, move_count)
+    pegs = get_move(pegs)
+    move_count += 1
+    if pegs["peg1"].empty? && (pegs["peg2"].empty? || pegs["peg3"].empty?)
+      record = 2 ** (pegs["peg2"].count + pegs["peg3"].count) -1
+      hanoi_win(move_count, record)
+    end
+  end
 
 end
 
-def print_board(pegs, turn_count)
-  #system "clear" || system "cls"
+def print_board(pegs, move_count)
 
-  puts "\nTurn: #{turn_count}"
+  puts "\nMoves: #{move_count}"
   printf("\r%-10s %-24s %-24s Peg 3\n\n", "", "Peg 1", "Peg 2")
 
   13.times do |height|
@@ -136,8 +140,38 @@ def print_board(pegs, turn_count)
   80.times do
     printf("^")
   end
-  printf("\r")
+  printf("\n")
 
 end
 
+def get_move(pegs)
+
+  from_peg = to_peg = nil
+  
+  loop do
+    puts "\rType the number of a peg from which to take the top disk :"
+    from_peg= "peg" + gets.chomp
+    break if pegs[from_peg][0]
+    puts "\rInvalid entry."
+  end
+  
+  disk = pegs[from_peg].pop
+  
+  loop do
+    puts "\rType the number of the peg onto which to place the #{disk} disk :"
+    to_peg = "peg" + gets.chomp
+    break if pegs[to_peg].last == nil || pegs[to_peg].last > disk
+    puts "\rInvalid entry."
+  end
+  
+  pegs[to_peg].push disk
+  pegs
+end
+  
+def hanoi_win (moves, record)
+  puts "Congratulations! You Won in #{moves} moves. Best possible #{record}"
+  exit
+end
+
+  
 hanoi
