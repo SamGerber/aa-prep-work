@@ -19,3 +19,58 @@
 # of two abundant numbers.
 
 # Solution by Sam Gerber
+
+# This method returns the sum of all positive integers which cannot be
+# written as the sum of two abundant numbers.
+def non_abundant_sums(max)
+  sum = (0..max).inject(:+)
+  sum -= abundant_sums(max).inject(:+)
+  sum
+end
+
+# This method returns an array of all the numbers that are sums of two
+# abundant numbers and that do not exceed max.
+def abundant_sums(max)
+  abundant_sums = []
+  abundant_numbers = abundant_numbers(max)
+  abundant_numbers.each_with_index do |x, i|
+    (i...abundant_numbers.count).each do |j|
+      y = abundant_numbers[j]
+      abundant_sums << x + y unless x + y > max
+    end
+  end
+  abundant_sums.uniq.sort
+end
+
+# This method returns an array containing the abundant numbers not exceeding max
+def abundant_numbers(max)
+  numbers = []
+  test_number = 12
+
+  while test_number <= max
+    if proper_divisors(test_number).reduce(:+) > test_number
+      numbers << test_number
+    end
+    test_number += 1
+  end
+  numbers
+end
+
+
+# This method returns the proper divisors of a number in an array.
+def proper_divisors(number)
+  factors = [1]
+
+  factor = 2
+  while factor * factor <= number
+    if number % factor == 0
+      factors << factor
+      factors << number / factor
+    end
+    factor += 1
+  end
+
+  factors.sort.uniq
+end
+
+print non_abundant_sums(28123)
