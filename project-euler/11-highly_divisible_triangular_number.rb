@@ -35,7 +35,7 @@ def divisors(number)
     factor += 1
   end
 
-  factors.sort
+  factors.sort.uniq
 end
 
 def highly_divisible(divisors)
