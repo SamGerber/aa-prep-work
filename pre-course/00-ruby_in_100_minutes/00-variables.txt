@@ -1,0 +1,43 @@
+# ruby_in_100_minutes
+# Exercises
+# 00-variables
+
+# Use IRB to store values with each of the following variable names. 
+# Which names are good, which are actually invalid Ruby, 
+# and which are valid but go against Ruby style?
+#
+#  *time_machine
+#  *student_count_integer
+#  *homeworkAssignment
+#  *3_sections
+#  *top_ppl
+
+ruby 2.1.7p400 (2015-08-18 revision 51632) [x64-mingw32]
+
+irb(main):007:0> time_machine = "bigger on the inside"
+  => "bigger on the inside"
+
+irb(main):008:0> student_count_integer = 5
+  => 5
+
+irb(main):009:0> homeworkAssignment = "read this book"
+  => "read this book"
+
+irb(main):010:0> 3_sections = "invalid"
+  SyntaxError: (irb):10: trailing `_' in number
+  3_sections = "invalid"
+    ^
+  (irb):10: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+  3_sections = "invalid"
+          ^
+        from C:/Ruby21-x64/bin/irb:11:in `<main>'
+
+irb(main):011:0> top_ppl = ["Bll Gts", "Stv Jbs", "Ln Msk"]
+  => ["Bll Gts", "Stv Jbs", "Ln Msk"]
+
+
+#  *time_machine            ==> good
+#  *student_count_integer   ==> bad style, contains data type
+#  *homeworkAssignment      ==> bad style, camel- instead of snake-cased
+#  *3_sections              ==> invalid, doesn't start with lower case letter
+#  *top_ppl                 ==> bad style, abbreviated.

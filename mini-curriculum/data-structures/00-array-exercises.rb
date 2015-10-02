@@ -110,12 +110,12 @@ def play_hanoi(pegs)
 
   loop do
     print_board(pegs, move_count)
-    pegs = get_move(pegs)
-    move_count += 1
     if pegs["peg1"].empty? && (pegs["peg2"].empty? || pegs["peg3"].empty?)
       record = 2 ** (pegs["peg2"].count + pegs["peg3"].count) -1
       hanoi_win(move_count, record)
     end
+    pegs = get_move(pegs)
+    move_count += 1
   end
 
 end
@@ -147,31 +147,31 @@ end
 def get_move(pegs)
 
   from_peg = to_peg = nil
-  
+
   loop do
     puts "\rType the number of a peg from which to take the top disk :"
     from_peg= "peg" + gets.chomp
     break if pegs[from_peg][0]
     puts "\rInvalid entry."
   end
-  
+
   disk = pegs[from_peg].pop
-  
+
   loop do
     puts "\rType the number of the peg onto which to place the #{disk} disk :"
     to_peg = "peg" + gets.chomp
     break if pegs[to_peg].last == nil || pegs[to_peg].last > disk
     puts "\rInvalid entry."
   end
-  
+
   pegs[to_peg].push disk
   pegs
 end
-  
+
 def hanoi_win (moves, record)
   puts "Congratulations! You Won in #{moves} moves. Best possible #{record}"
   exit
 end
 
-  
+
 hanoi
