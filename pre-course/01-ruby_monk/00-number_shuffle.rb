@@ -19,7 +19,7 @@ def number_shuffle(number)
       end
     end
   end
-  return results.sort
+  return results.uniq.sort
 end
 
 puts number_shuffle(123456789)
