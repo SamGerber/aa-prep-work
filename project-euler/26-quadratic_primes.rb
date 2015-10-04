@@ -82,11 +82,12 @@ end
 
 # This method returns true if number is prime
 def is_prime?(number)
-  return false if number.abs < 2
-  return true if number.abs < 4
+  number = number.abs
+  return false if number < 2
+  return true if number < 4
 
   factor = 2
-  while factor * factor <= number.abs
+  while factor * factor <= number
     return false if number % factor == 0
     factor += 1
   end
