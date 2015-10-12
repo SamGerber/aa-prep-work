@@ -51,5 +51,5 @@ def sieve(primes = nil, block)
 end
 
 puts ""
-print primes(987654321).count
+print primes(7654321).count
 puts ""
