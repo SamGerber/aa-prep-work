@@ -1,0 +1,15 @@
+# Problem Statement
+# Create a class Calculator, which performs addition and subtraction of
+# two numbers at a time. The sample code explains the expected API.
+
+#https://rubymonk.com/learning/books/1-ruby-primer/problems/9-calculator
+
+class Calculator
+  def add(a, b)
+   a + b
+  end
+
+  def subtract(a, b)
+   a - b
+  end
+end

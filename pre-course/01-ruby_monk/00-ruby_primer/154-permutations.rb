@@ -1,3 +1,13 @@
+# Problem Statement
+# Given a 3 or 4 digit number with distinct digits, return a sorted array
+# of all the unique numbers that can be formed with those digits.
+#
+# Example:
+# Given: 123
+# Return: [123, 132, 213, 231, 312, 321]
+#
+# https://rubymonk.com/learning/books/1-ruby-primer/problems/154-permutations
+
 def number_shuffle(number)
   results = []
   if number < 100
@@ -19,7 +29,5 @@ def number_shuffle(number)
       end
     end
   end
-  return results.uniq.sort
+  return results.sort
 end
-
-puts number_shuffle(123456789)
