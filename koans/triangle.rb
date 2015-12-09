@@ -14,7 +14,21 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  sides = [a, b, c]
+  if sides.min <= 0
+    raise TriangleError, "One or more sides is not > 0"
+  elsif sides.max >= sides.inject(:+).fdiv(2)
+    raise TriangleError, "One side longer than sum of others"
+  end
+
+  case sides.uniq.count
+  when 1
+    :equilateral
+  when 2
+    :isosceles
+  when 3
+    :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
