@@ -1,0 +1,3 @@
+read_sequences	/Users/samgerber/Documents/aA/aa-prep-work/codeeval/easy/05_detecting_cycles/lib/05_detecting_cycles.rb	/^def read_sequences(filename)$/;"	method	line:1
+find_sequence	/Users/samgerber/Documents/aA/aa-prep-work/codeeval/easy/05_detecting_cycles/lib/05_detecting_cycles.rb	/^def find_sequence(list)$/;"	method	line:8
+find_sequences	/Users/samgerber/Documents/aA/aa-prep-work/codeeval/easy/05_detecting_cycles/lib/05_detecting_cycles.rb	/^def find_sequences(filename)$/;"	method	line:19
