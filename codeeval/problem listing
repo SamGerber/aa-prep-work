@@ -1,0 +1,364 @@
+103
+LOWEST UNIQUE NUMBER
+CHALLENGE DESCRIPTION:
+
+
+There is a game where each player picks a number from 1 to 9, writes it on a paper and gives to a guide. A player wins if his number is the lowest unique. We may have 10-20 players in our game.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename.
+
+You're a guide and you're given a set of numbers from players for the round of game. E.g. 2 rounds of the game look this way:
+
+3 3 9 1 6 5 8 1 5 3
+9 2 9 9 1 8 8 8 2 1 1
+OUTPUT SAMPLE:
+
+Print a winner's position or 0 in case there is no winner. In the first line of input sample the lowest unique number is 6. So player 5 wins.
+
+5
+0
+
+104
+WORD TO DIGIT
+CHALLENGE DESCRIPTION:
+
+
+Having a string representation of a set of numbers you need to print this numbers.
+
+All numbers are separated by semicolon. There are up to 20 numbers in one line. The numbers are "zero" to "nine"
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Each line in this file is one test case. E.g.
+
+zero;two;five;seven;eight;four
+three;seven;eight;nine;two
+OUTPUT SAMPLE:
+
+Print numbers in the following way:
+
+025784
+37892
+
+106
+ROMAN NUMERALS
+CHALLENGE DESCRIPTION:
+
+
+Many persons are familiar with the Roman numerals for relatively small numbers. The symbols I (capital i), V, X, L, C, D, and M represent the decimal values 1, 5, 10, 50, 100, 500 and 1000 respectively. To represent other values, these symbols, and multiples where necessary, are concatenated, with the smaller-valued symbols written further to the right. For example, the number 3 is represented as III, and the value 73 is represented as LXXIII. The exceptions to this rule occur for numbers having units values of 4 or 9, and for tens values of 40 or 90. For these cases, the Roman numeral representations are IV (4), IX (9), XL (40), and XC (90). So the Roman numeral representations for 24, 39, 44, 49, and 94 are XXIV, XXXIX, XLIV, XLIX, and XCIV, respectively.
+
+Write a program to convert a cardinal number to a Roman numeral.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Input example is the following
+
+159
+296
+3992
+Input numbers are in range [1, 3999]
+
+OUTPUT SAMPLE:
+
+Print out Roman numerals.
+
+CLIX
+CCXCVI
+MMMCMXCII
+
+107
+
+SHORTEST REPETITION
+CHALLENGE DESCRIPTION:
+
+
+Write a program to determine the shortest repetition in a string.
+A string is said to have period p if it can be formed by concatenating one or more repetitions of another string of length p. For example, the string "xyzxyzxyzxyz" has period 3, since it is formed by 4 repetitions of the string "xyz". It also has periods 6 (two repetitions of "xyzxyz") and 12 (one repetition of "xyzxyzxyzxyz").
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Each line will contain a string of up to 80 non-blank characters. E.g.
+
+abcabcabcabc
+bcbcbcbcbcbcbcbcbcbcbcbcbcbc
+dddddddddddddddddddd
+adcdefg
+OUTPUT SAMPLE:
+
+Print out the smallest period of the input string. E.g.
+
+3
+2
+1
+7
+
+111
+LONGEST WORD
+CHALLENGE DESCRIPTION:
+
+In this challenge you need to find the longest word in a sentence. If the sentence has more than one word of the same length you should pick the first one.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Input example is the following
+
+
+
+1
+2
+some line with text
+another line
+Each line has one or more words. Each word is separated by space char.
+
+OUTPUT SAMPLE:
+
+Print the longest word in the following way.
+
+
+
+1
+2
+some
+another
+
+
+112
+SWAP ELEMENTS
+CHALLENGE DESCRIPTION:
+
+
+You are given a list of numbers which is supplemented with positions that have to be swapped.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Input example is the following
+
+1 2 3 4 5 6 7 8 9 : 0-8
+1 2 3 4 5 6 7 8 9 10 : 0-1, 1-3
+As you can see a colon separates numbers with positions.
+Positions start with 0.
+You have to process positions left to right. In the example above (2nd line) first you process 0-1, then 1-3.
+
+OUTPUT SAMPLE:
+
+Print the lists in the following way.
+
+9 2 3 4 5 6 7 8 1
+2 4 3 1 5 6 7 8 9 10
+
+113
+MULTIPLY LISTS
+CHALLENGE DESCRIPTION:
+
+You have 2 lists of positive integers. Write a program which multiplies corresponding elements in these lists.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Input example is the following
+
+9 0 6 | 15 14 9
+5 | 8
+13 4 15 1 15 5 | 1 4 15 14 8 2
+The lists are separated with a pipe char, numbers are separated with a space char.
+The number of elements in lists are in range [1, 10].
+The number of elements is the same in both lists.
+Each element is a number in range [0, 99].
+
+OUTPUT SAMPLE:
+
+Print the result in the following way.
+
+135 0 54
+40
+13 16 225 14 120 10
+
+115
+MIXED CONTENT
+CHALLENGE DESCRIPTION:
+
+
+You have a string of words and digits divided by comma. Write a program which separates words with digits. You shouldn't change the order elements.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Input example is the following
+
+8,33,21,0,16,50,37,0,melon,7,apricot,peach,pineapple,17,21
+24,13,14,43,41
+OUTPUT SAMPLE:
+
+melon,apricot,peach,pineapple|8,33,21,0,16,50,37,0,7,17,21
+24,13,14,43,41
+As you cas see you need to output the same input string if it has words only or digits only.
+
+116
+MORSE CODE
+CHALLENGE DESCRIPTION:
+
+
+You have received a text encoded with Morse code and want to decode it.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Input example is the following:
+
+.- ...- ..--- .-- .... .. . -.-. -..-  ....- .....
+-... .... ...--
+Each letter is separated by space char, each word is separated by 2 space chars.
+
+OUTPUT SAMPLE:
+
+Print out decoded words. E.g.
+
+AV2WHIECX 45
+BH3
+You program has to support letters and digits only.
+
+122
+HIDDEN DIGITS
+CHALLENGE DESCRIPTION:
+
+In this challenge you're given a random string containing hidden and visible digits. The digits are hidden behind lower case latin letters as follows: 0 is behind 'a', 1 is behind ' b ' etc., 9 is behind 'j'. Any other symbol in the string means nothing and has to be ignored. So the challenge is to find all visible and hidden digits in the string and print them out in order of their appearance.
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Each line in this file contains a string. You may assume that there will be no white spaces inside the string. E.g.
+
+abcdefghik
+Xa,}A#5N}{xOBwYBHIlH,#W
+(ABW>'yy^'M{X-K}q,
+6240488
+OUTPUT SAMPLE:
+
+For each test case print out all visible and hidden digits in order of their appearance. Print out NONE in case there is no digits in the string. E.g.
+
+012345678
+05
+NONE
+6240488
+
+124
+ROAD TRIP
+CHALLENGE DESCRIPTION:
+
+You've decided to make a road trip across the country in a straight line. You have chosen the direction you'd like to travel and made a list of cities in that direction that have gas stations to stop at and fill up your tank. To make sure that this route is viable, you need to know the distances between the adjacent cities in order to be able to travel this distance on a single tank of gasoline, (No one likes running out of gas.) but you only know distances to each city from your starting point.
+
+INPUT SAMPLE:
+
+The first argument is a path to a filename. Each line in the file contains the list of cities and distances to them, comma delimited, from the starting point of your trip. You start your trip at point 0. The cities with their distances are separated by semicolon. E.g.
+
+Rkbs,5453; Wdqiz,1245; Rwds,3890; Ujma,5589; Tbzmo,1303;
+Vgdfz,70; Mgknxpi,3958; Nsptghk,2626; Wuzp,2559; Jcdwi,3761;
+Yvnzjwk,5363; Pkabj,5999; Xznvb,3584; Jfksvx,1240; Inwm,5720;
+Ramytdb,2683; Voclqmb,5236;
+OUTPUT SAMPLE:
+
+Print out the distance from the starting point to the nearest city, and the distances between two nearest cities separated by comma, in order they appear on the route. E.g.
+
+1245,58,2587,1563,136
+70,2489,67,1135,197
+1240,2344,1779,357,279
+2683,2553
+Constrains:
+Cities are unique, and represented by randomly generated string containing latin characters [A-Z][a-z].
+The route length is an integer in range [10000, 30000]
+The number of cities is in range [500, 600]
+
+128
+COMPRESSED SEQUENCE
+CHALLENGE DESCRIPTION:
+
+Assume that someone dictates you a sequence of numbers, and you need to write it down. For brevity, he dictates it as follows: first he dictates the number of consecutive identical numbers, and then - the number itself.
+
+For example:
+The sequence below
+
+1 1 3 3 3 2 2 2 2 14 14 14 11 11 11 2
+is dictated as follows:
+
+two times one, three times three, four times two, three times fourteen, three times eleven, one time two
+and you have to write down the sequence
+
+2 1 3 3 4 2 3 14 3 11 1 2
+Your task is to write a program that compresses a given sequence using this approach.
+
+INPUT SAMPLE:
+
+Your program should accept a path to a file as its first argument that contains T number of lines. Each line is a test case represented by a sequence of integers with the length L, where each integer is N separated by a space.
+
+
+
+1
+2
+3
+4
+40 40 40 40 29 29 29 29 29 29 29 29 57 57 92 92 92 92 92 86 86 86
+86 86 86 86 86 86 86
+73 73 73 73 41 41 41 41 41 41 41 41 41 41
+1 1 3 3 3 2 2 2 2 14 14 14 11 11 11 2
+7
+OUTPUT SAMPLE:
+
+For each test case, print out a compressed sequence of numbers separated by a single space, one per line.
+
+For example:
+
+
+
+1
+2
+3
+4
+4 40 8 29 2 57 5 92 10 86
+4 73 10 41
+2 1 3 3 4 2 3 14 3 11 1 2
+1 7
+CONSTRAINTS:
+
+T is in a range from 20 to 50.
+N is in a range from 0 to 99.
+L is in a range from 1 to 400.
+
+131
+SPLIT THE NUMBER
+CHALLENGE DESCRIPTION:
+
+You are given a number N and a pattern. The pattern consists of lowercase latin letters and one operation "+" or "-". The challenge is to split the number and evaluate it according to this pattern e.g.
+1232 ab+cd -> a:1, b:2, c:3, d:2 -> 12+32 -> 44
+
+INPUT SAMPLE:
+
+Your program should accept as its first argument a path to a filename. Each line of the file is a test case, containing the number and the pattern separated by a single whitespace. E.g.
+
+
+
+1
+2
+3
+4
+5
+3413289830 a-bcdefghij
+776 a+bc
+12345 a+bcde
+1232 ab+cd
+90602 a+bcde
+OUTPUT SAMPLE:
+
+For each test case print out the result of pattern evaluation. E.g.
+
+
+
+1
+2
+3
+4
+5
+-413289827
+83
+2346
+44
+611
+Constraints:
+N is in range [100, 1000000000]a
